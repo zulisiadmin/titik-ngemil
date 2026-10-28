@@ -13,7 +13,7 @@ loginForm.addEventListener('submit', async (event) => {
     localStorage.setItem('tn_auth_user', JSON.stringify(data.user));
     loginMessage.textContent = `Login berhasil. Selamat datang, ${data.user.brand}.`;
     loginMessage.classList.add('is-visible');
-    setTimeout(() => location.href = 'status.html', 900);
+    setTimeout(() => location.href = data.user.role === 'admin' ? 'dashboard-admin.html' : 'dashboard-tenant.html', 700);
   } catch (error) {
     loginMessage.textContent = error.message;
     loginMessage.classList.add('is-visible');

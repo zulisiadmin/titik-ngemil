@@ -9,9 +9,13 @@ const authUser = JSON.parse(localStorage.getItem('tn_auth_user') || 'null');
 if (mainNav && authToken) {
   const loginLink = [...mainNav.querySelectorAll('a')].find(link => /login\.html$/.test(link.getAttribute('href') || ''));
   if (loginLink) {
-    loginLink.textContent = authUser?.brand ? `${authUser.brand} · Keluar` : 'Keluar';
-    loginLink.href = '#logout';
-    loginLink.addEventListener('click', async (event) => {
+    loginLink.textContent = authUser?.brand || 'Dashboard';
+    loginLink.href = authUser?.role === 'admin' ? 'dashboard-admin.html' : 'dashboard-tenant.html';
+    const logoutLink = document.createElement('a');
+    logoutLink.href = '#logout';
+    logoutLink.textContent = 'Keluar';
+    mainNav.insertBefore(logoutLink, mainNav.querySelector('.nav-cta'));
+    logoutLink.addEventListener('click', async (event) => {
       event.preventDefault();
       try {
         await fetch('https://titik-ngemil-api.titik-ngemil-v2.workers.dev/api/logout', { method: 'POST', headers: { Authorization: `Bearer ${authToken}` } });

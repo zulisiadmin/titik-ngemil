@@ -1,0 +1,10 @@
+const slug = new URLSearchParams(location.search).get('slug') || TN.tenants[0].slug;
+const data = TN.tenants.find(tenant => tenant.slug === slug) || TN.tenants[0];
+const tenantIndex = TN.tenants.indexOf(data);
+document.title = `${data.brand} — Titik Ngemil`;
+document.querySelector('#detail-name').textContent = data.brand;
+document.querySelector('#detail-category').textContent = `${tnCategoryName(data.categoryId)} · ${data.stallCode.replace('B','Booth ')}`;
+document.querySelector('#detail-description').textContent = tnText(data.desc);
+document.querySelector('#detail-booth').textContent = data.stallCode.replace('B','');
+const image = document.querySelector('#detail-image'); image.src = tnTenantImage(data,tenantIndex); image.alt = `Booth ${data.brand}`;
+document.querySelector('#food-list').innerHTML = data.menu.map(item => `<article class="food-item"><div><h3>${item.name}</h3><p>${tnText(item.desc)}</p></div><b>${tnMoney(item.price)}</b></article>`).join('');

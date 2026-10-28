@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login tenant Titik Ngemil">
+  <title>Login Tenant — Titik Ngemil</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">T</span><span><strong>Titik Ngemil</strong><small>Pasar kuliner terkurasi</small></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigasi utama"><a href="acara.html">Acara</a><a href="menu.html">Tenant</a><a href="index.html#lokasi">Lokasi</a><a href="login.html" aria-current="page">Login</a><a class="nav-cta" href="daftar-tenant.html">Gabung</a></nav>
+  </header>
+  <main class="login-shell">
+    <section class="login-visual" aria-label="Suasana Titik Ngemil">
+      <img src="transaksi.jpg" alt="Pengunjung melakukan transaksi di tenant Titik Ngemil">
+      <div class="login-caption"><span>Ruang untuk tumbuh</span><h2>Kelola tenant tanpa alur yang rumit.</h2></div>
+    </section>
+    <section class="login-panel">
+      <div class="login-card">
+        <p class="eyebrow">Portal tenant</p>
+        <h1>Selamat datang kembali.</h1>
+        <p>Masuk untuk melihat informasi booth dan mengelola profil tenant.</p>
+        <form class="login-form" id="login-form">
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="nama@usaha.com" required></div>
+          <div class="field"><label for="password">Kata sandi</label><input id="password" name="password" type="password" autocomplete="current-password" minlength="6" placeholder="Minimal 6 karakter" required></div>
+          <div class="login-options"><label><input type="checkbox" name="remember"> Ingat saya</label><a href="mailto:halo@titikngemil.id?subject=Bantuan%20login">Lupa kata sandi?</a></div>
+          <button class="button button-primary" type="submit">Masuk ke portal</button>
+          <p class="login-message" id="login-message" role="status">Login demo berhasil. Sesi tersimpan di browser ini.</p>
+        </form>
+        <p class="login-demo">Demo front-end — autentikasi server dan dashboard akan dihubungkan pada tahap backend.</p>
+      </div>
+    </section>
+  </main>
+  <script src="login.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

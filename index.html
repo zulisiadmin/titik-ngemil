@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Titik Ngemil — pasar kuliner terkurasi di tengah kota.">
+  <title>Titik Ngemil — Rasa kota, satu titik.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Titik Ngemil, kembali ke atas">
+      <span class="brand-mark" aria-hidden="true">T</span>
+      <span><strong>Titik Ngemil</strong><small>Pasar kuliner terkurasi</small></span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Navigasi utama">
+      <a href="acara.html">Acara</a>
+      <a href="menu.html">Tenant</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="login.html">Login</a>
+      <a class="nav-cta" href="daftar-tenant.html">Gabung</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Gondangdia · Jakarta Pusat</p>
+        <h1>Rasa kota,<br><em>satu titik.</em></h1>
+        <p class="hero-lede">Jajanan pilihan, pedagang lokal, dan suasana selepas kerja—dirangkum dalam satu lorong yang nyaman untuk semua.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="menu.html">Lihat tenant</a>
+          <a class="text-link" href="#lokasi">Rencanakan kunjungan <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <figure class="hero-photo">
+          <img src="hero-lorong.png" alt="Suasana lorong kuliner Titik Ngemil saat matahari terbenam">
+          <figcaption><span>TN—01</span><span>Gondangdia · 2026</span></figcaption>
+        </figure>
+        <aside class="event-ticket">
+          <span class="ticket-label">Event perdana</span>
+          <strong>Jumat<br>30.10.26</strong>
+          <span>14.00—22.00 WIB</span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="photo-story section-shell" aria-label="Suasana Titik Ngemil">
+      <figure class="photo-story-main reveal">
+        <img src="pengunjung.jpg" alt="Pengunjung menikmati makanan di lorong kuliner pada malam hari" loading="lazy">
+        <figcaption>Ruang makan bersama yang hidup selepas kerja.</figcaption>
+      </figure>
+      <figure class="photo-story-side reveal">
+        <img src="proses-memasak.jpg" alt="Tenant memasak makanan langsung di booth" loading="lazy">
+        <figcaption>Dimasak langsung, disajikan hangat.</figcaption>
+      </figure>
+      <p class="photo-story-quote reveal">“Bukan sekadar tempat makan. Ini ruang untuk bertemu rasa dan orang di baliknya.”</p>
+    </section>
+
+    <section id="acara" class="event-strip" aria-label="Informasi acara">
+      <div><span>01</span><p><small>Kapan</small>Jumat, 30 Oktober 2026</p></div>
+      <div><span>02</span><p><small>Di mana</small>Lorong Srikaya, Gondangdia</p></div>
+      <div><span>03</span><p><small>Tiket</small>Gratis untuk semua</p></div>
+      <a href="#lokasi" aria-label="Lihat detail kunjungan">→</a>
+    </section>
+
+    <section id="tenant" class="tenants section-shell">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Pilihan dari lorong</p>
+        <h2>Datang lapar.<br>Pulang dengan cerita.</h2>
+        <p>24 tenant lokal yang dipilih karena rasa, cerita, dan konsistensinya.</p>
+      </div>
+
+      <div class="tenant-browser reveal">
+        <div class="filter-row" role="group" aria-label="Filter kategori tenant">
+          <button class="filter is-active" data-filter="all">Semua</button>
+          <button class="filter" data-filter="kuliner">Makanan</button>
+          <button class="filter" data-filter="minuman">Minuman</button>
+          <button class="filter" data-filter="jajanan">Jajanan</button>
+        </div>
+        <div class="tenant-list" id="tenant-list"></div>
+        <button class="button button-outline" id="show-more">Tampilkan lainnya</button>
+      </div>
+    </section>
+
+    <section class="experience section-shell">
+      <figure class="experience-photo reveal">
+        <img src="tenant-01.jpg" alt="Pedagang menyerahkan pesanan kepada pengunjung" loading="lazy">
+        <figcaption><strong>24</strong><span>tenant lokal terpilih</span></figcaption>
+      </figure>
+      <div class="experience-copy reveal">
+        <p class="eyebrow">Satu lorong, banyak rasa</p>
+        <h2>Mudah dijelajahi.<br>Tidak perlu tersesat.</h2>
+        <p>Booth tersusun berurutan di dua sisi lorong. Cari nomor tenant, pesan, lalu nikmati suasana di area duduk bersama.</p>
+        <a class="text-link" href="denah.html">Buka denah lengkap <span>→</span></a>
+      </div>
+    </section>
+
+    <section id="denah" class="map-section section-shell">
+      <div class="map-card reveal">
+        <div class="map-title"><span>Denah ringkas</span><strong>Lorong Srikaya</strong></div>
+        <div class="map-grid" id="map-grid" aria-label="Denah 24 booth"></div>
+        <div class="map-legend"><span><i class="open"></i>Tersedia</span><span><i class="occupied"></i>Tenant aktif</span><span><i class="busy"></i>Favorit</span><span class="entrance-mark">↑ Pintu masuk dari sisi ini</span></div>
+      </div>
+      <div class="steps reveal">
+        <article><span>01</span><h3>Pilih rasa</h3><p>Cari tenant dari kategori atau nomor booth.</p></article>
+        <article><span>02</span><h3>Pesan langsung</h3><p>Datangi booth dan pesan ke penjualnya.</p></article>
+        <article><span>03</span><h3>Nikmati lorong</h3><p>Makan di area bersama atau bawa pulang.</p></article>
+      </div>
+    </section>
+
+    <section id="lokasi" class="visit">
+      <div class="visit-copy reveal">
+        <p class="eyebrow">Datang ke titik</p>
+        <h2>Lima menit dari<br>Stasiun Gondangdia.</h2>
+        <p>Masuk dari Jl. Srikaya II, lalu ikuti penanda berwarna biru. Kami menyarankan datang dengan transportasi umum.</p>
+        <a class="button button-gold" href="https://maps.google.com/?q=Lorong+Srikaya+Gondangdia" target="_blank" rel="noreferrer">Buka petunjuk arah</a>
+      </div>
+      <div class="visit-visual reveal">
+        <img src="arah-dari-stasiun.jpg" alt="Jalur pejalan kaki dari stasiun menuju area kuliner" loading="lazy">
+        <span>Jalan kaki ±5 menit</span>
+      </div>
+      <div class="visit-details reveal">
+        <div><small>Alamat</small><strong>Lorong Srikaya</strong><span>Kebon Sirih, Menteng<br>Jakarta Pusat 10340</span></div>
+        <div><small>Jam acara</small><strong>14.00—22.00</strong><span>Jumat, 30 Oktober 2026</span></div>
+        <div><small>Transportasi</small><strong>KRL · TransJakarta</strong><span>Turun di Gondangdia</span></div>
+      </div>
+    </section>
+
+    <section id="gabung" class="join section-shell reveal">
+      <p class="eyebrow">Untuk pedagang lokal</p>
+      <h2>Punya rasa<br>yang layak ditemukan?</h2>
+      <p>Kami mencari tenant dengan produk kuat, pelayanan rapi, dan cerita yang nyata.</p>
+      <a class="button button-primary" href="daftar-tenant.html">Ajukan tenant</a>
+      <span class="join-note">Pendaftaran membutuhkan ±5 menit</span>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="brand brand-footer"><span class="brand-mark">T</span><span><strong>Titik Ngemil</strong><small>Pasar kuliner terkurasi</small></span></div>
+    <p>Rasa lokal, ruang bersama.</p>
+    <div><a href="menu.html">Tenant</a><a href="#lokasi">Kunjungan</a><a href="daftar-tenant.html">Gabung</a><a href="mailto:halo@titikngemil.id">Kontak</a></div>
+    <small>© 2026 Titik Ngemil</small>
+  </footer>
+
+  <script src="data/db.js"></script>
+  <script src="site-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

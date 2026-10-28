@@ -1,0 +1,11 @@
+name = "titik-ngemil-api"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "titik-ngemil-v2"
+database_id = "f0620045-5859-4254-9d8c-7e2dedcb785b"
+
+[vars]
+ALLOWED_ORIGIN = "https://zulisiadmin.github.io"

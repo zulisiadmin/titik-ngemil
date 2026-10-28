@@ -19,3 +19,10 @@ Lalu buka `http://localhost:8790`.
 ## Deployment
 
 Setiap push ke branch `main` diterbitkan otomatis melalui GitHub Pages menggunakan workflow di `.github/workflows/pages.yml`.
+
+Backend pendaftaran dan login berjalan di Cloudflare Worker dengan database D1. Deploy API dengan:
+
+```bash
+npm install
+npm run deploy:api
+```

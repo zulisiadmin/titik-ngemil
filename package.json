@@ -1,0 +1,13 @@
+{
+  "name": "titik-ngemil-v2",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "deploy:api": "wrangler deploy --config worker/wrangler.toml"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  }
+}

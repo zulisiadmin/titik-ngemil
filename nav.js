@@ -4,6 +4,26 @@ const mainNav = document.querySelector('#main-nav');
 const currentLanguage = localStorage.getItem('tn_language') || 'id';
 document.documentElement.lang = currentLanguage;
 
+const authToken = localStorage.getItem('tn_auth_token');
+const authUser = JSON.parse(localStorage.getItem('tn_auth_user') || 'null');
+if (mainNav && authToken) {
+  const loginLink = [...mainNav.querySelectorAll('a')].find(link => /login\.html$/.test(link.getAttribute('href') || ''));
+  if (loginLink) {
+    loginLink.textContent = authUser?.brand ? `${authUser.brand} · Keluar` : 'Keluar';
+    loginLink.href = '#logout';
+    loginLink.addEventListener('click', async (event) => {
+      event.preventDefault();
+      try {
+        await fetch('https://titik-ngemil-api.titik-ngemil-v2.workers.dev/api/logout', { method: 'POST', headers: { Authorization: `Bearer ${authToken}` } });
+      } finally {
+        localStorage.removeItem('tn_auth_token');
+        localStorage.removeItem('tn_auth_user');
+        location.href = 'index.html';
+      }
+    });
+  }
+}
+
 if (mainNav && !mainNav.querySelector('.language-toggle')) {
   const languageToggle = document.createElement('button');
   languageToggle.className = 'language-toggle';

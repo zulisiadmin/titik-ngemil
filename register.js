@@ -7,7 +7,7 @@ joinForm.addEventListener('submit', async (event) => {
   submitButton.disabled = true;
   submitButton.textContent = 'Mengirim…';
   formSuccess.classList.add('is-visible');
-  formSuccess.textContent = 'Menghubungkan ke server…';
+  formSuccess.textContent = 'Mengirim pendaftaran…';
   try {
     const payload = Object.fromEntries(new FormData(joinForm));
     const data = await tnApi('/api/register', { method: 'POST', body: JSON.stringify(payload) });
